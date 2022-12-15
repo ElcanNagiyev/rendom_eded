@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p{
+            border: 1px black solid;
+            width: 200px;
+            height: 20px;
+
+        }
+        input{
+            display: block;
+            margin-bottom: 10px;
+        }
+        span{
+            border: 1px black solid;
+            padding: 3px 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Random oyunu</h1>
+
+    <input type="number" placeholder="eded daxil edin">
+
+    <button>Texmin et</button>
+    <span>0</span>
+    <p></p>
+
+    <script>
+let eded=document.querySelector('input')
+let btn=document.querySelector('button')
+let p=document.querySelector('p')
+let span=document.querySelector('span')
+
+
+let random=Math.round(Math.random()*100)
+let s=0;
+
+eded.addEventListener('keyup',function(event1){
+  a=event1.target.value
+})
+
+
+
+
+btn.addEventListener('click', (event)=>{
+
+let texmin=a;
+console.log(a)
+
+if(random!=texmin){
+
+    s++
+    span.style.background='red'
+    span.innerText=`${s}`
+
+    if(random>texmin){
+        p.innerText='yuxari'   
+    }
+    else{
+        p.innerText='asagi'
+    }
+}
+else{
+    s++
+    p.innerText=`${s} defeye tapdiniz`
+    span.style.background='green'
+    span.innerText=`${s}`
+}
+})
+
+    </script>
+</body>
+</html>
